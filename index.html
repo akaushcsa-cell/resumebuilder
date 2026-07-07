@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="icon" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-file-lines"></i>
+            <h2>Resume Builder</h2>
+        </div>
+        <div class="top-actions">
+            <button id="themeBtn" title="Toggle Light/Dark Mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            <button id="downloadBtn">
+                <i class="fa-solid fa-download"></i>
+                Download PDF
+            </button>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <aside class="sidebar">
+            <h2>
+                <i class="fa-solid fa-user"></i>
+                Personal Information
+            </h2>
+            <div class="field">
+                <label>Profile Photo</label>
+                <input type="file" id="profileImage" accept="image/*">
+            </div>
+            <div class="field">
+                <label>Full Name</label>
+                <input type="text" id="fullName" placeholder="Abhishek Kaushik">
+            </div>
+            <div class="field">
+                <label>Job Title</label>
+                <input type="text" id="jobTitle" placeholder="Frontend Developer">
+            </div>
+            <div class="field">
+                <label>Email</label>
+                <input type="email" id="email" placeholder="example@gmail.com">
+            </div>
+            <div class="field">
+                <label>Phone</label>
+                <input type="text" id="phone" placeholder="+91 XXXXXXXXXX">
+            </div>
+            <div class="field">
+                <label>Location</label>
+                <input type="text" id="location" placeholder="Bengaluru, India">
+            </div>
+            <div class="field">
+                <label>LinkedIn</label>
+                <input type="text" id="linkedin" placeholder="LinkedIn URL">
+            </div>
+            <div class="field">
+                <label>GitHub</label>
+                <input type="text" id="github" placeholder="GitHub URL">
+            </div>
+            <div class="field">
+                <label>Portfolio</label>
+                <input type="text" id="portfolio" placeholder="Portfolio URL">
+            </div>
+
+            <h2>
+                <i class="fa-solid fa-pen"></i>
+                Professional Summary
+            </h2>
+            <textarea id="summary" rows="6" placeholder="Write your professional summary..."></textarea>
+
+            <h2>
+                <i class="fa-solid fa-code"></i>
+                Skills
+            </h2>
+            <textarea id="skills" rows="6" placeholder="HTML&#10;CSS&#10;JavaScript&#10;React&#10;Node.js"></textarea>
+
+            <h2>
+                <i class="fa-solid fa-folder-open"></i>
+                Projects
+            </h2>
+            <textarea id="projects" rows="6" placeholder="Resume Builder Dashboard&#10;E-Commerce Platform&#10;Task Management App"></textarea>
+
+            <h2>
+                <i class="fa-solid fa-graduation-cap"></i>
+                Education
+            </h2>
+            <div id="educationBox">
+                <div class="education">
+                    <input type="text" class="college" placeholder="College/University">
+                    <input type="text" class="degree" placeholder="Degree / Major">
+                    <input type="text" class="year" placeholder="Graduation Year (e.g., 2026)">
+                </div>
+            </div>
+            <button id="addEducation" type="button">
+                <i class="fa-solid fa-plus"></i> Add Education
+            </button>
+
+            <h2>
+                <i class="fa-solid fa-briefcase"></i>
+                Experience
+            </h2>
+            <div id="experienceBox">
+                <div class="experience">
+                    <input type="text" class="company" placeholder="Company Name">
+                    <input type="text" class="position" placeholder="Job Title / Position">
+                    <input type="text" class="duration" placeholder="Duration (e.g., 2025 - Present)">
+                    <textarea class="description" rows="3" placeholder="Describe your responsibilities and impact..."></textarea>
+                </div>
+            </div>
+            <button id="addExperience" type="button">
+                <i class="fa-solid fa-plus"></i> Add Experience
+            </button>
+
+            <h2>
+                <i class="fa-solid fa-certificate"></i>
+                Certificates
+            </h2>
+            <textarea id="certificates" rows="5" placeholder="AWS Certified Developer&#10;Google UX Design Certificate"></textarea>
+
+            <h2>
+                <i class="fa-solid fa-language"></i>
+                Languages
+            </h2>
+            <textarea id="languages" rows="4" placeholder="English&#10;Hindi&#10;Spanish"></textarea>
+
+            <h2>
+                <i class="fa-solid fa-heart"></i>
+                Hobbies
+            </h2>
+            <textarea id="hobbies" rows="4" placeholder="Open Source Contributing&#10;Photography&#10;Traveling"></textarea>
+
+            <h2>
+                <i class="fa-solid fa-palette"></i>
+                Theme Color
+            </h2>
+            <input type="color" id="accentColor" value="#2563eb">
+        </aside>
+
+        <main class="preview">
+            <div class="resume" id="resume">
+                
+                <div class="resume-header">
+                    <div class="resume-image">
+                        <img src="https://placehold.co/180x180" id="previewImage" alt="Profile Picture">
+                    </div>
+                    <div class="resume-info">
+                        <h1 id="previewName">Your Name</h1>
+                        <h3 id="previewJob">Professional Title</h3>
+                        <div class="contact">
+                            <span id="previewEmail"></span>
+                            <span id="previewPhone"></span>
+                            <span id="previewLocation"></span>
+                            <span id="previewLinkedin"></span>
+                            <span id="previewGithub"></span>
+                            <span id="previewPortfolio"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resume-content">
+                    <section>
+                        <h2>Professional Summary</h2>
+                        <p id="previewSummary"></p>
+                    </section>
+
+                    <section>
+                        <h2>Skills</h2>
+                        <ul id="previewSkills"></ul>
+                    </section>
+
+                    <section>
+                        <h2>Projects</h2>
+                        <ul id="previewProjects"></ul>
+                    </section>
+
+                    <section>
+                        <h2>Education</h2>
+                        <div id="previewEducation"></div>
+                    </section>
+
+                    <section>
+                        <h2>Experience</h2>
+                        <div id="previewExperience"></div>
+                    </section>
+
+                    <section>
+                        <h2>Certificates</h2>
+                        <ul id="previewCertificates"></ul>
+                    </section>
+
+                    <section>
+                        <h2>Languages</h2>
+                        <ul id="previewLanguages"></ul>
+                    </section>
+
+                    <section>
+                        <h2>Hobbies</h2>
+                        <ul id="previewHobbies"></ul>
+                    </section>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
