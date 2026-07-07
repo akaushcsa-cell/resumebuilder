@@ -32,5 +32,4 @@ resume-builder/
 ├── index.html       # Structural layout and semantic input elements
 ├── style.css        # Interactive grid styling, theme variables, and print settings
 ├── script.js        # Core synchronization, file loading, and element repeater logic
-├── favicon.svg      # Minimalist browser tab icon
 └── README.md        # Comprehensive repository documentation
